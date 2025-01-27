@@ -50,6 +50,12 @@ if __name__=='__main__':
             k=word.count(guess)
             for _ in range(k):
                 letter_guessed+=guess
-                
+
         
+        #Now we will be displaying the progresss of our game
+        for char in word:
+            if char in letter_guessed and Counter(letter_guessed) != Counter(word):
+                print(char, end=' ')
+                correct +=1
+                
 
