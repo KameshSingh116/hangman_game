@@ -6,6 +6,8 @@ words=['apple', 'banana', 'mango', 'strawberry',
 'orange', 'grape', 'pineapple', 'apricot', 'lemon', 'coconut', 'watermelon', 
 'cherry', 'papaya', 'berry', 'peach', 'lychee', 'muskmelon']
 
+username=input("ENter the player name:")
+
 word=random.choice(words)
 size=len(word)
 
@@ -57,5 +59,23 @@ if __name__=='__main__':
             if char in letter_guessed and Counter(letter_guessed) != Counter(word):
                 print(char, end=' ')
                 correct +=1
-                
+            
+            elif (Counter(letter_guessed)==Counter(word)):
+                print("The word is:")
+                print(word)
+                flag=1 
+                print(f"Congractulations {username}!") 
+                print("You have guessed the word before your chances end!") 
+
+                break #to break out of the for loop
+                break #to break out of the while loop
+            
+            else:
+                print('_',end=' ')
+
+
+
+            
+
+
 
