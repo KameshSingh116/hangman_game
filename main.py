@@ -26,8 +26,9 @@ if __name__=='__main__':
     correct=0  #used to tell the number of correctly guessed letters in the selected word.
     flag=0     #used to determine whether the word is complete;ly guessed or not.
     
+    try:
 
-    while(chances>0) and flag==0:
+     while(chances>0) and flag==0:
 
         try:
             guess=str(input("Enter the letter to guess:"))
@@ -72,6 +73,18 @@ if __name__=='__main__':
             
             else:
                 print('_',end=' ')
+
+     if chances<=0 and Counter(letter_guessed)!=Counter(word):
+        print()
+        print(f"You lost {username}")
+        print(f"The word was {word}")
+
+    except KeyboardInterrupt:
+        print()
+        print(f"See you soon {username}")
+        exit()
+
+            
 
 
 
