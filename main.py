@@ -28,25 +28,25 @@ if __name__=='__main__':
     
     try:
 
-     while(chances>0) and flag==0:
+        while(chances>0) and flag==0:
 
-        try:
-            guess=str(input("Enter the letter to guess:"))
+             try:
+                guess=str(input("Enter the letter to guess:\n"))
 
-        except:
-            print("Enter only letters!")
-            continue
+             except:
+                print("Enter only letters!")
+                continue
 
-        if not guess.isalpha():
-            print("Enter only letters!")
+             if not guess.isalpha():
+                print("Enter only letters!")
 
-        elif len(guess)>1:
-            print("Enter only single letter!")
-            continue
+             elif len(guess)>1:
+                print("Enter only single letter!")
+                continue
 
-        elif guess in letter_guessed:
-            print("You have already guessed the letter!")
-            continue
+             elif guess in letter_guessed:
+                print("You have already guessed the letter!")
+                continue
 
 
         if guess in word:
@@ -62,7 +62,7 @@ if __name__=='__main__':
                 correct +=1
             
             elif (Counter(letter_guessed)==Counter(word)):
-                print("The word is:")
+                print("The word is:", end=' ')
                 print(word)
                 flag=1 
                 print(f"Congractulations {username}!") 
@@ -74,10 +74,10 @@ if __name__=='__main__':
             else:
                 print('_',end=' ')
 
-     if chances<=0 and Counter(letter_guessed)!=Counter(word):
-        print()
-        print(f"You lost {username}")
-        print(f"The word was {word}")
+        if chances<=0 and Counter(letter_guessed)!=Counter(word):
+           print()
+           print(f"You lost {username}")
+           print(f"The word was {word}")
 
     except KeyboardInterrupt:
         print()
